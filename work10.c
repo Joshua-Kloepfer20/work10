@@ -24,6 +24,9 @@ struct food * free_list(struct food * node) {
         free_list(node->next);
         free(node);
     }
+    else {
+        return node;
+    }
 }
 
 int main() {
