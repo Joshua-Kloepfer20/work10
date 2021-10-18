@@ -1,8 +1,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
-struct food {char name[100]; float price; float weight; struct food * next;};
-
+#include "work10.h"
 void print_list(struct food * node) {
     if (node != NULL) {
         printf("%s cost %0.2f and weighs %0.2f\n", node->name, node->price, node->weight);
