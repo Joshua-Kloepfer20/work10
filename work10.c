@@ -35,11 +35,12 @@ int main() {
     x->price = 3.76;
     x->weight = 5.48;
     int i;
-    struct food *y = insert_front(x, "oranges", 3.85, 6.75);
-    struct food *v = insert_front(y, "lolypops", .99, .59);
-    struct food *c = insert_front(v, "chocholate", 2.99, 1.34);
-    struct food *q = insert_front(c, "cheerios", 5.34, 3.21);
-    struct food *u = insert_front(q, "potatoes", 5.75, 3.64);
-    print_list(u);
-    free_list(u);
+    x = insert_front(x, "oranges", 3.85, 6.75);
+    x = insert_front(x, "lolypops", .99, .59);
+    x = insert_front(x, "chocholate", 2.99, 1.34);
+    x = insert_front(x, "cheerios", 5.34, 3.21);
+    x = insert_front(x, "potatoes", 5.75, 3.64);
+    print_list(x);
+    free_list(x);
+    return 0;
 }
