@@ -28,18 +28,22 @@ struct food * free_list(struct food * node) {
     }
 }
 
-int main() {
-    struct food *x = malloc(sizeof(struct food));
-    strcpy(x->name, "apples");
-    x->price = 3.76;
-    x->weight = 5.48;
-    int i;
-    x = insert_front(x, "oranges", 3.85, 6.75);
-    x = insert_front(x, "lolypops", .99, .59);
-    x = insert_front(x, "chocholate", 2.99, 1.34);
-    x = insert_front(x, "cheerios", 5.34, 3.21);
-    x = insert_front(x, "potatoes", 5.75, 3.64);
-    print_list(x);
-    free_list(x);
-    return 0;
+struct food * remove_node(struct food *node, float data) {
+    struct food *x = node;
+    struct food *y = node;
+    if (node->price == data || node->weight == data) {
+        x = node->next;
+        free(node);
+        return x;
+    }
+    while (x != NULL) {
+        if (x->price == data || node->weight == data) {
+            y->next = x->next;
+            free(x);
+            return node;
+        }
+        y = x;
+        x = x->next;
+    }
+    return node;
 }
