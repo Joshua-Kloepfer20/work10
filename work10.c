@@ -20,7 +20,7 @@ struct food * insert_front(struct food * node, char *name, float price, float we
 
 struct food * free_list(struct food * node) {
     if (node != NULL) {
-        free_list(node->next);
+        return free_list(node->next);
         free(node);
     }
     else {
